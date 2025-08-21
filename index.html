@@ -5,154 +5,239 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <title>ห้างหุ้นส่วนจำกัด กิ่งทอง</title>
+    <title>ห้างหุ้นส่วนจำกัด กิ่งทอง - Web Development Services</title>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'kanit': ['Kanit', 'sans-serif'],
+            },
+            colors: {
+              'gold': {
+                50: '#fffbeb',
+                100: '#fef3c7',
+                200: '#fde68a',
+                300: '#fcd34d',
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+                700: '#b45309',
+                800: '#92400e',
+                900: '#78350f',
+              },
+              'dark-blue': {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 1s ease-in-out',
+              'slide-up': 'slideUp 0.8s ease-out',
+              'float': 'float 3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(50px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-        .kanit-thin {
-  font-family: "Kanit", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.kanit-extralight {
-  font-family: "Kanit", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.kanit-light {
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.kanit-regular {
-  font-family: "Kanit", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.kanit-medium {
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.kanit-semibold {
-  font-family: "Kanit", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.kanit-bold {
-  font-family: "Kanit", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.kanit-extrabold {
-  font-family: "Kanit", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.kanit-black {
-  font-family: "Kanit", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.kanit-thin-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.kanit-extralight-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.kanit-light-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.kanit-regular-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.kanit-medium-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.kanit-semibold-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.kanit-bold-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.kanit-extrabold-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.kanit-black-italic {
-  font-family: "Kanit", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.background{
-    background-color: #fdcb6e;
-
-}
-
-.box-shadow{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-}
-
-        </style>
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .code-pattern {
+        background-image: 
+          linear-gradient(45deg, #f1f5f9 25%, transparent 25%), 
+          linear-gradient(-45deg, #f1f5f9 25%, transparent 25%), 
+          linear-gradient(45deg, transparent 75%, #f1f5f9 75%), 
+          linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      }
+    </style>
   </head>
-  <body  class="background">
-
-
-    <div class="card box-shadow" style="width: 700px; margin: auto;   margin-top: 10%;">
-        <div class="card-body" style="padding: 30px;">
-        <img src="./logo-big.png" alt="logo">
-        <h1 class="text-center kanit-bold">ห้างหุ้นส่วนจำกัด กิ่งทอง</h1>
-        <hr>
-        <h3 class="text-center kanit-thin">จะเปิดให้บริการเร็วๆนี้</h3>
-        <p class="text-center kanit-thin">273 หมู่ที่ 15 ตำบลแสนสุข อำเภอวารินชำราบ จังหวัดอุบลราชธานี, อำเภอวารินชำราบ, จังหวัดอุบลราชธานี 34190</p>
+  
+  <body class="min-h-screen gradient-bg font-kanit">
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 code-pattern opacity-10 pointer-events-none"></div>
+    
+    <!-- Floating Elements -->
+    <div class="fixed top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+    <div class="fixed top-32 right-20 w-16 h-16 bg-gold-400/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    <div class="fixed bottom-20 left-1/4 w-12 h-12 bg-blue-400/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+    
+    <!-- Main Container -->
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+      <div class="w-full max-w-4xl mx-auto">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-12 animate-fade-in">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full mb-6 shadow-2xl">
+            <i class="fas fa-code text-white text-2xl"></i>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+            กิ่งทอง
+            <span class="bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">
+              Development
+            </span>
+          </h1>
+          <p class="text-xl md:text-2xl text-white/80 font-light">
+            ห้างหุ้นส่วนจำกัด กิ่งทอง
+          </p>
         </div>
+
+        <!-- Main Card -->
+        <div class="glass-effect rounded-3xl shadow-2xl overflow-hidden animate-slide-up">
+          <div class="p-8 md:p-12">
+            
+            <!-- Logo Section -->
+            <div class="text-center mb-8">
+              <div class="inline-block relative">
+                <img src="./logo-big.png" alt="King Thong Logo" class="max-w-full h-auto max-h-32 mx-auto rounded-2xl shadow-lg">
+                <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  <i class="fas fa-check text-white text-sm"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Status Section -->
+            <div class="text-center mb-8">
+              <div class="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 text-white px-6 py-3 rounded-full shadow-lg mb-4">
+                <i class="fas fa-rocket mr-2"></i>
+                <span class="font-semibold">เร็วๆ นี้</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+                กำลังพัฒนาเว็บไซต์ใหม่
+              </h2>
+              <p class="text-lg text-white/90 font-light">
+                เราจะเปิดให้บริการด้าน Web Development เร็วๆ นี้
+              </p>
+            </div>
+
+            <!-- Services Preview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-laptop-code text-white"></i>
+                </div>
+                <h3 class="text-white font-semibold mb-2">Web Development</h3>
+                <p class="text-white/70 text-sm">สร้างเว็บไซต์สมัยใหม่</p>
+              </div>
+              
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-mobile-alt text-white"></i>
+                </div>
+                <h3 class="text-white font-semibold mb-2">Responsive Design</h3>
+                <p class="text-white/70 text-sm">รองรับทุกอุปกรณ์</p>
+              </div>
+              
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-cogs text-white"></i>
+                </div>
+                <h3 class="text-white font-semibold mb-2">Custom Solutions</h3>
+                <p class="text-white/70 text-sm">แก้ไขตามความต้องการ</p>
+              </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 mb-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-2">ที่อยู่</h4>
+                  <p class="text-white/80 leading-relaxed">
+                    273 หมู่ที่ 15 ตำบลแสนสุข อำเภอวารินชำราบ<br>
+                    จังหวัดอุบลราชธานี 34190
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+              <div class="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <i class="fas fa-bell mr-3"></i>
+                <span class="font-semibold">แจ้งเตือนเมื่อเปิดให้บริการ</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 animate-fade-in">
+          <p class="text-white/60 text-sm">
+            © 2024 ห้างหุ้นส่วนจำกัด กิ่งทอง - Professional Web Development Services
+          </p>
+        </div>
+
       </div>
+    </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Loading Animation Script -->
+    <script>
+      // Add smooth loading animation
+      document.addEventListener('DOMContentLoaded', function() {
+        const elements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+        elements.forEach((el, index) => {
+          el.style.animationDelay = `${index * 0.2}s`;
+        });
+      });
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
+      // Add interactive hover effects
+      document.querySelectorAll('.hover\\:scale-105').forEach(element => {
+        element.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+        });
+        element.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    </script>
   </body>
 </html>
